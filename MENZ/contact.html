@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact – Dagbesteding MENZ</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-mark">AT</div>
+        <div class="brand-text">
+          <span class="brand-top">DAGBESTEDING</span>
+          <span class="brand-name">MENZ</span>
+          <span class="brand-sub">met hart voor migrante ouderen</span>
+        </div>
+      </a>
+      <nav class="main-nav" aria-label="Hoofdmenu">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="waarom.html">Waarom MENZ</a></li>
+        <li><a href="activiteiten.html">Activiteiten</a></li>
+        <li><a href="vervoer.html">Vervoer</a></li>
+       <li><a href="mantelzorg.html">Mantelzorg</a></li>
+        <li><a href="een-kijkje-bij-ons.html">Een kijkje bij ons</a></li>
+        <li><a href="werken.html">Werken bij ons</a></li>
+        <li><a href="nieuws.html">Nieuws & agenda</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+<p style="margin-bottom:1rem;">&nbsp;</p> <!-- voegt visuele ruimte toe -->
+
+  <main class="container">
+    <h1>Contact</h1>
+    <p class="lead">Heeft u vragen of wilt u zich aanmelden? Vul onderstaand formulier in en wij nemen zo snel mogelijk contact op.</p>
+
+    <!-- Feedback bericht -->
+    <p id="form-feedback" style="font-weight:700;"></p>
+
+    <form action="contact.php" method="post" class="contact-form">
+      <!-- Honeypot veld (spamfilter) -->
+      <input type="text" name="website" style="display:none">
+
+      <label for="name">Naam:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Telefoon (optioneel):</label>
+      <input type="text" id="phone" name="phone">
+
+      <label for="subject">Onderwerp / Activiteit:</label>
+      <input type="text" id="subject" name="subject" required>
+
+      <label for="message">Bericht:</label>
+      <textarea id="message" name="message" rows="5"></textarea>
+
+      <button type="submit" class="btn btn-primary">Verstuur</button>
+    </form>
+
+    <section id="contact" class="contact" style="background-color: transparent;">
+      <div class="container">
+        <div class="contact-details">
+          <div class="contact-card">
+            <h3>Bezoekadres</h3>
+            <p>
+              Krom Boomssloot 22, II<br>
+              1011 GW Amsterdam
+            </p>
+          </div>
+          <div class="contact-card">
+            <h3>Contact</h3>
+            <p>
+              <a href="tel:+31616000117">06 16000117</a><br>
+              <a href="mailto:zorg@dagbestedingmenz.nl">zorg@dagbestedingmenz.nl</a>
+            </p>
+          </div>
+          <div class="contact-card">
+            <h3>Openingstijden</h3>
+            <p><em>...</em></p>
+          </div>
+        </div>
+      </div>
+      </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot-inner">
+      <p>&copy; <span id="year"></span> Dagbesteding MENZ</p>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/mail.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const feedback = document.getElementById("form-feedback");
+    if (params.has("sent")) {
+      feedback.innerText = "✅ Bedankt! Uw bericht is verzonden.";
+      feedback.style.color = "green";
+    }
+    if (params.has("error")) {
+      feedback.innerText = "❌ Er is iets misgegaan. Probeer het opnieuw.";
+      feedback.style.color = "red";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+/* ===================================================================
+   STYLING – Dagbesteding MENZ
+   Kleuren hier aanpassen:
+   ------------------------------------------------------------------- */
+:root{
+  --brand-brown: #7a5233;   /* bruin/goudtint poster */
+  --brand-brown-dark:#5e3f26;
+  --brand-blue:  #2680a8;   /* blauw poster */
+  --brand-blue-dark:#1f6e91;
+  --ink: #24303a;
+  --muted:#6b7a86;
+  --bg:#ffffff;
+  --paper:#f7f9fb;
+  --ring: rgba(38,128,168,.35);
+}
+
+/* Basis */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+}
+img{max-width:100%;display:block}
+.container{width:min(1100px, 92%); margin-inline:auto}
+
+h1,h2,h3{line-height:1.25;margin:0 0 .5rem}
+h1{font-size:clamp(1.8rem, 2.5vw + 1rem, 3rem); font-weight:800}
+h2{font-size:clamp(1.4rem, 1.2vw + 1rem, 2rem); font-weight:800}
+h3{font-size:1.15rem; font-weight:700}
+p{margin:.25rem 0 1rem}
+.lead{font-size:1.05rem;color:var(--muted)}
+
+.btn{
+  display:inline-block; padding:.8rem 1.1rem; border-radius:.8rem;
+  text-decoration:none; font-weight:800; border:0; cursor:pointer;
+}
+.btn-primary{ background:var(--brand-blue); color:#fff }
+.btn-primary:hover{ background:var(--brand-blue-dark) }
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:10; background:var(--bg);
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between; padding: .8rem 0;
+}
+.brand{display:flex; align-items:center; gap:.75rem; text-decoration:none; color:inherit}
+.brand-mark{
+  width:46px;height:46px;border-radius:12px;
+  background:linear-gradient(135deg, var(--brand-brown), var(--brand-brown-dark));
+  color:#fff;font-weight:900;display:grid;place-items:center;
+}
+.brand-text{display:grid}
+.brand-top{font-size:.7rem; letter-spacing:.08em; color:var(--muted)}
+.brand-name{font-size:1.2rem; font-weight:900}
+.brand-sub{font-size:.75rem; color:var(--muted)}
+
+.main-nav ul{list-style:none;display:flex;gap:1rem;padding:0;margin:0}
+.main-nav a{color:var(--ink); text-decoration:none; font-weight:700}
+.main-nav a:hover{color:var(--brand-blue)}
+.nav-toggle{display:none}
+
+.header-wave{
+  height:18px;
+  background: radial-gradient(180% 60% at 50% 0%, var(--brand-blue) 0, transparent 60%);
+}
+
+/* Hero */
+.hero{
+  display:grid; grid-template-columns: 1.2fr 1fr; gap:2rem; align-items:center;
+  padding:2rem 0 3rem;
+}
+.photo-placeholder{
+  min-height:260px; border-radius:1.2rem;
+  background:
+    linear-gradient(160deg, rgba(0,0,0,.15), rgba(0,0,0,0)),
+    url('../img/placeholder-elderly.jpg') center/cover,
+    linear-gradient(135deg, #d9e9f3, #f0f6fb);
+  outline: 3px solid rgba(38,128,168,.1);
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+.features.full-width {
+  background: var(--paper); /* grijsvlak zoals bij de andere features */
+  width: 100vw; /* volledige breedte van het scherm */
+  margin-left: calc(-50vw + 50%); /* zorgt dat het echt van rand tot rand loopt */
+  padding: 3rem 0;
+}
+
+.AltBlock .cards .card img {
+  height: 200px; /* pas aan zodat het past bij de andere cards */
+  object-fit: cover;
+}
+
+
+/* Features */
+.features{padding:3rem 0; background:var(--paper)}
+.checklist{margin:0;padding-left:1.2rem}
+.checklist li{margin:.4rem 0}
+.grid-2{display:grid;grid-template-columns:1fr 1fr; gap:2rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr); gap:1.2rem}
+.cards .card{
+  background:#f0f6fb;;border-radius:1rem;padding:1.1rem;border:1px solid rgba(0,0,0,.06);
+  box-shadow:0 8px 20px rgba(0,0,0,.04);
+}
+
+.card-img {
+  width: 100%;        /* vult de breedte van het card blok */
+  height: 200px;      /* stel een vaste hoogte in zodat alle afbeeldingen even hoog zijn */
+  object-fit: cover;  /* behoudt aspect ratio en vult het kader netjes */
+}
+
+
+/* Mid blocks */
+#vervoer, #mantelzorg{padding:3rem 0}
+#vervoer .highlight{
+  background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-dark));
+  color:#fff; border-radius:1rem; padding:1.2rem; font-weight:700
+}
+.mid{align-items:center}
+
+/* Contact */
+.contact{padding:3rem 0; background:var(--paper)}
+.contact-form{background:#fff;border:1px solid rgba(0,0,0,.06); border-radius:1rem; padding:1rem 1rem 1.2rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr; gap:1rem}
+.form-grid .full{grid-column:1/-1}
+label{display:grid; gap:.4rem; font-weight:700}
+input, textarea{
+  width:100%; padding:.8rem .9rem; border-radius:.8rem; border:1px solid #d9e3ea;
+  outline:0; font:inherit; background:#fff;
+}
+input:focus, textarea:focus{ box-shadow:0 0 0 4px var(--ring) }
+.hp{display:none !important}
+.feedback{margin:.8rem 0 0; font-weight:700}
+.consent{margin:.8rem 0 1rem; font-weight:600}
+
+
+.contact-details{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.2rem
+}
+.contact-card{background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:1rem; padding:1rem}
+
+/* Footer */
+.site-footer{padding:1.2rem 0; background:#0f151a; color:#cdd6dd;margin-top:2rem}
+.site-footer a{color:#cdd6dd;text-decoration:none;margin-right:1rem}
+.foot-inner{display:flex;align-items:center;justify-content:space-between}
+
+/* Responsief */
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr; gap:1rem}
+  .grid-2{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
+  .contact-details{grid-template-columns:1fr}
+  .main-nav ul{display:none}
+  .nav-toggle{display:inline-flex;align-items:center;gap:.5rem;
+    background:#fff;border:1px solid #d9e3ea;border-radius:.7rem;
+    padding:.45rem .7rem;font-weight:800;cursor:pointer}
+  .main-nav[ data-open="true"] ul{display:flex;flex-direction:column;gap:.6rem;margin-top:.8rem}
+}
+.mantelzorg-section .block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.mantelzorg-section .block.left-img { flex-direction: row; }
+.mantelzorg-section .block.right-img { flex-direction: row-reverse; }
+
+.mantelzorg-section .photo-placeholder {
+  width: 180px;
+  min-height: 120px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+/* Responsive: stapel onder elkaar op mobiel */
+@media (max-width:900px) {
+  .mantelzorg-section .block {
+    flex-direction: column !important;
+    text-align: center;
+  }
+  .mantelzorg-section .photo-placeholder {
+    width: 100%;
+    min-height: 150px;
+  }
+}
+
