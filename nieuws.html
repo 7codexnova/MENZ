@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nieuws – Dagbesteding MENZ</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .news-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .news-card {
+      background: #f0f6fb;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .news-card h2 {
+      margin-top: 0;
+    }
+
+    .news-date {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #0077b6;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #005f86;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-mark">AT</div>
+        <div class="brand-text">
+          <span class="brand-top">DAGBESTEDING</span>
+          <span class="brand-name">MENZ</span>
+          <span class="brand-sub">met hart voor migrante ouderen</span>
+        </div>
+      </a>
+      <nav class="main-nav" aria-label="Hoofdmenu">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
+        <ul id="navlist">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="waarom.html">Waarom MENZ</a></li>
+          <li><a href="activiteiten.html">Activiteiten</a></li>
+          <li><a href="vervoer.html">Vervoer</a></li>
+          <li><a href="mantelzorg.html">Mantelzorg</a></li>
+          <li><a href="een-kijkje-bij-ons.html">Kijkje</a></li>
+          <li><a href="werken.html">Werken bij ons</a></li>
+          <li><a href="nieuws.html" class="active">Nieuws</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <p style="margin-bottom:1rem;">&nbsp;</p> <!-- voegt visuele ruimte toe -->
+
+  <main class="container">
+    <h1>Nieuws & updates</h1>
+    <p class="lead">Blijf op de hoogte van de laatste activiteiten, evenementen en belangrijke informatie van Dagbesteding MENZ.</p>
+
+    <section class="news-grid">
+      <article class="news-card">
+        <h2>Excursie naar het museum</h2>
+        <p class="news-date">15 september 2025</p>
+        <p>Een gezellige dag samen cultuur beleven in het Stedelijk Museum. Inclusief vervoer en lunch.</p>
+        <a href="contact.html#inschrijven" class="btn">Schrijf je in</a>
+      </article>
+
+      <article class="news-card">
+        <h2>Herfstworkshop handwerken</h2>
+        <p class="news-date">22 oktober 2025</p>
+        <p>Kom samen creatief bezig zijn met breien en haken. Materialen zijn aanwezig.</p>
+        <a href="contact.html#inschrijven" class="btn">Schrijf je in</a>
+      </article>
+
+      <article class="news-card">
+        <h2>Winterfeest voor alle deelnemers</h2>
+        <p class="news-date">20 december 2025</p>
+        <p>Een feestelijke afsluiting van het jaar met muziek, eten en gezelligheid voor iedereen.</p>
+        <a href="contact.html#inschrijven" class="btn">Schrijf je in</a>
+      </article>
+    </section>
+
+    <section style="margin-top:3rem;">
+      <h2>Downloads & agenda</h2>
+      <p>Hier vindt u PDF’s met informatie over activiteiten, inschrijfformulieren en onze kalender. Zo blijft u altijd op de hoogte van alle geplande evenementen.</p>
+      <ul>
+        <li><a href="#">Agenda september–december (PDF)</a></li>
+        <li><a href="#">Inschrijfformulier activiteiten (PDF)</a></li>
+        <li><a href="#">Informatie brochure (PDF)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot-inner">
+      <p>&copy; <span id="year"></span> Dagbesteding MENZ</p>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
